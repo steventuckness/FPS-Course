@@ -14,7 +14,8 @@ var cur_slot = 0
 var cur_weapon = null
 
 func _ready():
-	pass
+	#pass
+	switch_to_weapon_slot(0)
 	
 func switch_to_next_weapon():
 	cur_slot = (cur_slot + 1) % slots_unlocked.size()
@@ -48,3 +49,4 @@ func disable_all_weapons():
 			weapon.set_inactive()
 		else:
 			weapon.hide()
+			
