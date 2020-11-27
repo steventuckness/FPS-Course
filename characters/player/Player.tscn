@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://characters/CharacterMover.gd" type="Script" id=1]
+[ext_resource path="res://characters/player/Player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -8,7 +9,7 @@ radius = 0.5
 [node name="Player" type="KinematicBody"]
 collision_layer = 2147483650
 collision_mask = 3
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.00252, 0 )
@@ -17,3 +18,6 @@ shape = SubResource( 1 )
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0 )
 current = true
+
+[node name="CharacterMover" type="Spatial" parent="."]
+script = ExtResource( 1 )
