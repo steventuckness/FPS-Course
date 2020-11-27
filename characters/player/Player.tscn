@@ -25,11 +25,3 @@ script = ExtResource( 1 )
 
 [node name="HealthManager" type="Spatial" parent="."]
 script = ExtResource( 3 )
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[node name="Timer2" type="Timer" parent="."]
-autostart = true
-[connection signal="timeout" from="Timer" to="." method="hurt" binds= [ 30, Vector3( 0, 0, 0 ) ]]
-[connection signal="timeout" from="Timer2" to="." method="heal" binds= [ 5 ]]
