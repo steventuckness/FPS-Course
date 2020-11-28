@@ -70,7 +70,7 @@ func _input(event):
 			weapon_manager.switch_to_last_weapon()
 
 func hurt(damage, dir):
-	print("hurt")
+	print("hit")
 	health_manager.hurt(damage, dir)
 	
 func heal(amount):

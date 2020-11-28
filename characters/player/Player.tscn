@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://characters/CharacterMover.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://effects/MuzzleFlash.gd" type="Script" id=11]
 [ext_resource path="res://effects/raw_assets/muzzleflash1.glb" type="PackedScene" id=12]
 [ext_resource path="res://effects/raw_assets/muzzleflash3.glb" type="PackedScene" id=13]
+[ext_resource path="res://weapons/DamageArea.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -48,7 +49,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "attack"
 length = 0.3
-loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Graphics:translation")
@@ -217,10 +217,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65155, -0.4807 )
 
 [node name="Machete" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0941158, -0.00536799, 0.326388 )
-visible = false
+script = ExtResource( 10 )
+damage = 10
+ammo = -1
+attack_rate = 0.4
 
 [node name="Graphics" type="Spatial" parent="Camera/WeaponManager/Weapons/Machete"]
-transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 0.999951, 0.00213216, 0.00971704, 0, 0.976761, -0.214326, -0.00994821, 0.214315, 0.976714, 0, 0, -0.0241483 )
 
 [node name="machete" parent="Camera/WeaponManager/Weapons/Machete/Graphics" instance=ExtResource( 6 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
@@ -229,6 +232,12 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 autoplay = "Idle"
 anims/Idle = SubResource( 2 )
 anims/attack = SubResource( 3 )
+
+[node name="BulletEmitters" type="Spatial" parent="Camera/WeaponManager/Weapons/Machete"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29031 )
+
+[node name="DamageArea" parent="Camera/WeaponManager/Weapons/Machete/BulletEmitters" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0678976, -0.605238 )
 
 [node name="MachineGun" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0903462, 0.0104079, 0.298873 )
@@ -266,6 +275,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0316734, -0.114626 )
 
 [node name="Shotgun" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0922061, 0, 0.318275 )
+visible = false
 script = ExtResource( 10 )
 attack_rate = 0.8
 
