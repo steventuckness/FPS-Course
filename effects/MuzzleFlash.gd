@@ -17,3 +17,7 @@ func flash():
 	
 func end_flash():
 	hide()
+
+
+func fire():
+	pass # Replace with function body.
