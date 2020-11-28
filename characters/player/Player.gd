@@ -27,6 +27,7 @@ func _ready():
 	character_mover.init(self)
 	health_manager.init()
 	health_manager.connect("dead", self, "kill")
+	weapon_manager.init($Camera/FirePoint, [self])
 
 func _process(_delta):
 	if Input.is_action_just_pressed("exit"):
@@ -47,6 +48,9 @@ func _process(_delta):
 	character_mover.set_move_vec(move_vec)
 	if Input.is_action_just_pressed("jump"):
 		character_mover.jump()
+		
+	weapon_manager.attack(Input.is_action_just_pressed("attack"), 
+		Input.is_action_pressed("attack"))
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -56,7 +60,7 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode in hotkeys:
 			weapon_manager.switch_to_weapon_slot(hotkeys[event.scancode])
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and (event.button_index == BUTTON_WHEEL_DOWN or event.button_index == BUTTON_WHEEL_UP):
 		if event.button_index == BUTTON_WHEEL_DOWN:
 			weapon_manager.switch_to_next_weapon()
 		else:
