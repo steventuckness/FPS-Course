@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://characters/CharacterMover.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://weapons/raw_assets/shotgun.glb" type="PackedScene" id=8]
 [ext_resource path="res://weapons/HitScanBulletEmitter.tscn" type="PackedScene" id=9]
 [ext_resource path="res://weapons/Weapon.gd" type="Script" id=10]
+[ext_resource path="res://effects/MuzzleFlash.gd" type="Script" id=11]
+[ext_resource path="res://effects/raw_assets/muzzleflash1.glb" type="PackedScene" id=12]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -228,16 +230,27 @@ anims/Idle = SubResource( 2 )
 anims/attack = SubResource( 3 )
 
 [node name="MachineGun" type="Spatial" parent="Camera/WeaponManager/Weapons"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0903462, 0.0104079, 0.272549 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0903462, 0.0104079, 0.298873 )
 script = ExtResource( 10 )
 automatic = true
 attack_rate = 0.1
 
 [node name="Graphics" type="Spatial" parent="Camera/WeaponManager/Weapons/MachineGun"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0467153 )
 
 [node name="machinegun" parent="Camera/WeaponManager/Weapons/MachineGun/Graphics" instance=ExtResource( 5 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+
+[node name="MuzzleFlash" type="Spatial" parent="Camera/WeaponManager/Weapons/MachineGun/Graphics"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000404246, 0.0330763, -0.174053 )
+script = ExtResource( 11 )
+
+[node name="muzzleflash1" parent="Camera/WeaponManager/Weapons/MachineGun/Graphics/MuzzleFlash" instance=ExtResource( 12 )]
+transform = Transform( -0.1, 0, -1.50996e-08, 0, 0.1, 0, 1.50996e-08, 0, -0.1, 0, 0, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="Camera/WeaponManager/Weapons/MachineGun/Graphics/MuzzleFlash"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0485815, -0.182643 )
+light_color = Color( 0.886275, 0.835294, 0.0901961, 1 )
+shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/WeaponManager/Weapons/MachineGun"]
 autoplay = "idle"
@@ -285,3 +298,4 @@ script = ExtResource( 1 )
 
 [node name="HealthManager" type="Spatial" parent="."]
 script = ExtResource( 3 )
+[connection signal="fire" from="Camera/WeaponManager/Weapons/MachineGun" to="Camera/WeaponManager/Weapons/MachineGun/Graphics/MuzzleFlash" method="flash"]
