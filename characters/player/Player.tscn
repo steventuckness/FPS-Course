@@ -2,7 +2,7 @@
 
 [ext_resource path="res://characters/CharacterMover.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=2]
-[ext_resource path="res://characters/HealthManager.gd" type="Script" id=3]
+[ext_resource path="res://characters/HealthManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/player/WeaponManager.gd" type="Script" id=4]
 [ext_resource path="res://weapons/raw_assets/machinegun.glb" type="PackedScene" id=5]
 [ext_resource path="res://weapons/raw_assets/machete.glb" type="PackedScene" id=6]
@@ -24,7 +24,7 @@
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "attack"
 length = 0.3
 step = 0.05
@@ -53,8 +53,7 @@ tracks/1/keys = {
 "values": [ Vector3( 12.376, 0.57, 0 ), Vector3( -67.8488, 8.61183, -12.0204 ), Vector3( -69.8973, 145.604, -130.245 ), Vector3( -68.9009, 15.493, -16.689 ), Vector3( -34.2027, 9.66547, -9.42669 ), Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Graphics:translation")
@@ -269,8 +268,8 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/WeaponManager/Weapons/Machete"]
 autoplay = "idle"
-anims/attack = SubResource( 3 )
-anims/idle = SubResource( 2 )
+anims/attack = SubResource( 2 )
+anims/idle = SubResource( 3 )
 
 [node name="BulletEmitters" type="Spatial" parent="Camera/WeaponManager/Weapons/Machete"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29031 )
@@ -449,8 +448,7 @@ anims/moving = SubResource( 11 )
 [node name="CharacterMover" type="Spatial" parent="."]
 script = ExtResource( 1 )
 
-[node name="HealthManager" type="Spatial" parent="."]
-script = ExtResource( 3 )
+[node name="HealthManager" parent="." instance=ExtResource( 3 )]
 [connection signal="fire" from="Camera/WeaponManager/Weapons/MachineGun" to="Camera/WeaponManager/Weapons/MachineGun/Graphics/MuzzleFlash" method="flash"]
 [connection signal="fire" from="Camera/WeaponManager/Weapons/Shotgun" to="Camera/WeaponManager/Weapons/Shotgun/Graphics/MuzzleFlash" method="flash"]
 [connection signal="fire" from="Camera/WeaponManager/Weapons/RocketLauncher" to="Camera/WeaponManager/Weapons/RocketLauncher/Graphics/MuzzleFlash" method="flash"]
