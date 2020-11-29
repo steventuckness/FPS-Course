@@ -33,7 +33,7 @@ background_energy = 6.1
 [node name="World" type="Spatial"]
 
 [node name="BirdMonster" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.68743, 1.01478, -0.201087 )
+transform = Transform( 0.871462, 0, -0.490463, 0, 1, 0, 0.490463, 0, 0.871462, 9.01797, 1.01478, -0.201087 )
 
 [node name="Environment" type="Spatial" parent="."]
 __meta__ = {

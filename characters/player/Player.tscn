@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://characters/CharacterMover.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=2]
@@ -232,7 +232,15 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 1.65155, -0.4807 ), Vector3( -0.03, 1.652, -0.481 ) ]
 }
 
-[node name="Player" type="KinematicBody"]
+[sub_resource type="SphereShape" id=12]
+radius = 13.0
+
+[sub_resource type="SphereShape" id=13]
+radius = 50.0
+
+[node name="Player" type="KinematicBody" groups=[
+"player",
+]]
 collision_layer = 2147483654
 collision_mask = 3
 script = ExtResource( 2 )
@@ -250,7 +258,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000879049, -1.74789, -0.001
 script = ExtResource( 4 )
 
 [node name="Weapons" type="Spatial" parent="Camera/WeaponManager"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 1.652, -0.481 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65155, -0.4807 )
 
 [node name="Machete" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0941158, -0.00536799, 0.326388 )
@@ -341,6 +349,7 @@ __meta__ = {
 
 [node name="Shotgun" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0983096, 0.00509262, 0.336525 )
+visible = false
 script = ExtResource( 10 )
 attack_rate = 0.8
 
@@ -442,6 +451,20 @@ __meta__ = {
 autoplay = "idle"
 anims/idle = SubResource( 10 )
 anims/moving = SubResource( 11 )
+
+[node name="AlertAreaHearing" type="Area" parent="Camera/WeaponManager"]
+collision_layer = 0
+collision_mask = 2147483650
+
+[node name="CollisionShape" type="CollisionShape" parent="Camera/WeaponManager/AlertAreaHearing"]
+shape = SubResource( 12 )
+
+[node name="AlertAreaLos" type="Area" parent="Camera/WeaponManager"]
+collision_layer = 0
+collision_mask = 2147483650
+
+[node name="CollisionShape" type="CollisionShape" parent="Camera/WeaponManager/AlertAreaLos"]
+shape = SubResource( 13 )
 
 [node name="FirePoint" type="Spatial" parent="Camera"]
 
