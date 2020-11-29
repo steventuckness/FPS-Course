@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://environment/raw_assets/grass_lowres.png" type="Texture" id=1]
 [ext_resource path="res://environment/assets/brickwall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://environment/assets/shed.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://weapons/Explosion.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 100, 2, 100 )
@@ -81,3 +82,11 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00995, 0 )
+
+[node name="Explosion" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40589, 2.89612, -5.34638 )
+
+[node name="Timer2" type="Timer" parent="Explosion"]
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Explosion/Timer2" to="Explosion" method="explode"]
