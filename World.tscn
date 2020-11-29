@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://environment/raw_assets/grass_lowres.png" type="Texture" id=1]
 [ext_resource path="res://environment/assets/brickwall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://environment/assets/shed.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/enemies/BirdMonster.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 100, 2, 100 )
@@ -30,6 +31,9 @@ background_sky = SubResource( 5 )
 background_energy = 6.1
 
 [node name="World" type="Spatial"]
+
+[node name="BirdMonster" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.68743, 1.01478, -0.201087 )
 
 [node name="Environment" type="Spatial" parent="."]
 __meta__ = {
