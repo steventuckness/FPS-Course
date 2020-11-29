@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://characters/CharacterMover.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=2]
@@ -16,6 +16,10 @@
 [ext_resource path="res://weapons/DamageArea.tscn" type="PackedScene" id=14]
 [ext_resource path="res://effects/raw_assets/muzzleflash2.glb" type="PackedScene" id=15]
 [ext_resource path="res://weapons/RocketSpawner.tscn" type="PackedScene" id=16]
+[ext_resource path="res://weapons/crosshair/crosshair026.png" type="Texture" id=17]
+[ext_resource path="res://weapons/crosshair/crosshair066.png" type="Texture" id=18]
+[ext_resource path="res://weapons/crosshair/crosshair065.png" type="Texture" id=19]
+[ext_resource path="res://weapons/crosshair/crosshair001.png" type="Texture" id=20]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -219,7 +223,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65155, -0.4807 )
 
 [node name="Machete" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0941158, -0.00536799, 0.326388 )
-visible = false
 script = ExtResource( 10 )
 damage = 10
 ammo = -1
@@ -241,6 +244,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.29031 )
 
 [node name="DamageArea" parent="Camera/WeaponManager/Weapons/Machete/BulletEmitters" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0678976, -0.605238 )
+
+[node name="Crosshair" type="TextureRect" parent="Camera/WeaponManager/Weapons/Machete"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -36.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MachineGun" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0903462, 0.0104079, 0.298873 )
@@ -275,6 +292,20 @@ anims/idle = SubResource( 5 )
 
 [node name="HitScanBulletEmitter" parent="Camera/WeaponManager/Weapons/MachineGun/BulletEmitters" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0316734, -0.114626 )
+
+[node name="Crosshair" type="TextureRect" parent="Camera/WeaponManager/Weapons/MachineGun"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -36.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Shotgun" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0922061, 0, 0.318275 )
@@ -321,8 +352,23 @@ transform = Transform( 0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195,
 [node name="HitScanBulletEmitter5" parent="Camera/WeaponManager/Weapons/Shotgun/BulletEmitters" instance=ExtResource( 9 )]
 transform = Transform( 0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0.0122293, -0.122796 )
 
+[node name="Crosshair" type="TextureRect" parent="Camera/WeaponManager/Weapons/Shotgun"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -36.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="RocketLauncher" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11557, 0.0445356, 0.30785 )
+visible = false
 script = ExtResource( 10 )
 
 [node name="Graphics" type="Spatial" parent="Camera/WeaponManager/Weapons/RocketLauncher"]
@@ -347,6 +393,20 @@ anims/idle = SubResource( 9 )
 [node name="BulletEmitters" type="Spatial" parent="Camera/WeaponManager/Weapons/RocketLauncher"]
 
 [node name="RocketSpawner" parent="Camera/WeaponManager/Weapons/RocketLauncher/BulletEmitters" instance=ExtResource( 16 )]
+
+[node name="Crosshair" type="TextureRect" parent="Camera/WeaponManager/Weapons/RocketLauncher"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.0
+margin_top = -36.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FirePoint" type="Spatial" parent="Camera"]
 
