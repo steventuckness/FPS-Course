@@ -262,7 +262,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65155, -0.4807 )
 
 [node name="Machete" type="Spatial" parent="Camera/WeaponManager/Weapons"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0941158, -0.00536799, 0.326388 )
-visible = false
 script = ExtResource( 10 )
 damage = 10
 ammo = -1
