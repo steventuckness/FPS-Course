@@ -70,17 +70,6 @@ transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0
 
 [node name="Graphics" parent="." instance=ExtResource( 1 )]
 
-[node name="Skeleton" parent="Graphics/Armature" index="0"]
-bones/0/bound_children = [ NodePath("Hip") ]
-bones/1/bound_children = [ NodePath("Body") ]
-bones/2/bound_children = [ NodePath("ArmUL") ]
-bones/3/bound_children = [ NodePath("ArmLL") ]
-bones/4/bound_children = [ NodePath("ArmUR") ]
-bones/5/bound_children = [ NodePath("ArmLR") ]
-bones/7/bound_children = [ NodePath("LegLL") ]
-bones/8/bound_children = [ NodePath("LegUR") ]
-bones/9/bound_children = [ NodePath("LegLR") ]
-
 [node name="ArmUL" type="BoneAttachment" parent="Graphics/Armature/Skeleton" index="1"]
 transform = Transform( -0.768204, 0.639068, -0.0381404, -0.634004, -0.767684, -0.0932756, -0.0888892, -0.0474735, 0.994909, 0.218738, 1.59086, 0.0117653 )
 bone_name = "upper_arml"
