@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/birdmonster.glb-d88e943991b8b9fe010c31d6813d987f.scn"
+path="res://.import/birdmonster.glb-914ceebbd24441981ca6b987f5bb2faa.scn"
 
 [deps]
 
-source_file="res://characters/enemies/raw_assets/birdmonster.glb"
-dest_files=[ "res://.import/birdmonster.glb-d88e943991b8b9fe010c31d6813d987f.scn" ]
+source_file="res://characters/enemies/raw_assets/birdmonster/birdmonster.glb"
+dest_files=[ "res://.import/birdmonster.glb-914ceebbd24441981ca6b987f5bb2faa.scn" ]
 
 [params]
 
