@@ -56,18 +56,6 @@ shape = SubResource( 1 )
 
 [node name="Graphics" parent="." instance=ExtResource( 1 )]
 
-[node name="Skeleton" parent="Graphics/Armature" index="0"]
-bones/0/bound_children = [ NodePath("Hip") ]
-bones/1/bound_children = [ NodePath("Body") ]
-bones/2/bound_children = [ NodePath("ArmUL") ]
-bones/3/bound_children = [ NodePath("ArmLL") ]
-bones/4/bound_children = [ NodePath("ArmUR") ]
-bones/5/bound_children = [ NodePath("ArmLR") ]
-bones/6/bound_children = [ NodePath("LegUL") ]
-bones/7/bound_children = [ NodePath("LegLL") ]
-bones/8/bound_children = [ NodePath("LegUR") ]
-bones/9/bound_children = [ NodePath("LegLR") ]
-
 [node name="ArmUL" type="BoneAttachment" parent="Graphics/Armature/Skeleton" index="1"]
 transform = Transform( -0.826506, 0.56134, -0.0422589, -0.550301, -0.821497, -0.14937, -0.118563, -0.1002, 0.987878, 0.234545, 1.44253, 0.15025 )
 bone_name = "upper_arml"
