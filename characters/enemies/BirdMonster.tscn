@@ -197,6 +197,7 @@ transform = Transform( 0.0455398, -0.0123159, -0.0849623, -0.00819999, 0.0263814
 shape = SubResource( 10 )
 
 [node name="HealthManager" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 max_health = 20
 
 [node name="CharacterMover" parent="." instance=ExtResource( 5 )]
