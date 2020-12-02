@@ -26,7 +26,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000762939, 1.00291, -0.0013
 collision_layer = 8
 collision_mask = 2147483649
 script = ExtResource( 1 )
-pickup_type = 6
+pickup_type = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
@@ -36,7 +36,7 @@ autoplay = "spin"
 anims/spin = SubResource( 2 )
 
 [node name="Graphics" type="Spatial" parent="."]
-transform = Transform( 0.282552, 0, -0.959252, 0, 1, 0, 0.959252, 0, 0.282552, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="shotgun" parent="Graphics" instance=ExtResource( 2 )]
 transform = Transform( -0.455758, 0, 0.205631, 0, 0.5, 0, -0.205631, 0, -0.455758, 0.0823921, 0, -0.182613 )
