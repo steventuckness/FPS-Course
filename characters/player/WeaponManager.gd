@@ -33,7 +33,7 @@ func init(_fire_point: Spatial, _bodies_to_exclude: Array):
 	weapons[WEAPON_SLOTS.ROCKET_LAUNCHER].connect("fire", self, "alert_nearby_enemies")
 	
 	for weapon in weapons:
-		weapon.connect("fired", self, "emit_ammo_changed_signal")
+		weapon.connect("fire", self, "emit_ammo_changed_signal")
 	
 	switch_to_weapon_slot(WEAPON_SLOTS.MACHETE)
 	
