@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/out-of-ammo.wav-ca1f4282b1a418e7f65ec6c347ce27e6.sample"
+
+[deps]
+
+source_file="res://sfx/out-of-ammo.wav"
+dest_files=[ "res://.import/out-of-ammo.wav-ca1f4282b1a418e7f65ec6c347ce27e6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

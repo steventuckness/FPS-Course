@@ -119,24 +119,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0008, 1.00291, 4.03737 )
 
 [node name="ShotgunPickup" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99924, 1.00291, 4.03737 )
-
-[node name="HealthPickup2" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00076, 1.00291, 7.03737 )
-
-[node name="MachineGunAmmoPickup2" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00128, 1.00292, 7.03615 )
-
-[node name="MachineGunPickup2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.00076, 1.00291, 7.03737 )
-
-[node name="RocketLauncherAmmoPickup2" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0008, 1.00291, 7.03737 )
-
-[node name="RocketLauncherPickup2" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -13.0008, 1.00291, 7.03737 )
-
-[node name="ShotgunAmmoPickup2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0008, 1.00291, 7.03737 )
-
-[node name="ShotgunPickup2" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99924, 1.00291, 7.03737 )
