@@ -84,3 +84,7 @@ func heal(amount):
 func kill():
 	dead = true
 	character_mover.freeze()
+
+
+func remove_pickups_info():
+	pass # Replace with function body.
